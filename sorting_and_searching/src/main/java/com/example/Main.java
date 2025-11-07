@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /*
@@ -69,5 +70,36 @@ public class Main {
 
         /*STEP 6 */
 
+    }
+}
+
+public void mergeSort(int arr[], int start, int end) {
+    //Sorts array by recursive mergesort
+
+    if (end > 1) {
+        int[] arrayB = Arrays.copyOfRange(arr, start, end / 2);
+        int[] arrayC = Arrays.copyOfRange(arr, end / 2, end);
+
+        mergeSort(arrayB, 0, arrayB.length);
+        mergeSort(arrayC, 0, arrayC.length);
+    }
+}
+
+public void merge(int arrA[], int arrB[], int arrC[]) {
+    // Merges two sorted arrays into one sorted array
+
+    int i = 0;
+    int j = 0;
+    int k = 0;
+
+    while (i < arrB.length && j < arrC.length) {
+        if (arrB[i] <= arrC[j]) {
+            arrA[k] = arrB[i]; 
+            i++;
+        } else {
+            arrA[k] = arrC[j];
+            j++;
+        }
+        k++;
     }
 }
