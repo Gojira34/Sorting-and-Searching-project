@@ -29,8 +29,8 @@ Used to sort the array after the initial sequential search and counting.
 
 Key idea:
 - **Divide and conquer** – recursively split the array into halves, sort each half, and merge them.
-**Time Complexity:** Θ(n log n)  
-**Space Complexity:** Θ(n)
+- **Time Complexity:** Θ(n log n)  
+- **Space Complexity:** Θ(n)
 ---
 ### 🔹 Binary Search
 After sorting, the program calls `binarySearch(int[] startingArray, int search)`:
