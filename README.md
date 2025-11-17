@@ -14,14 +14,38 @@ The goal is to:
 ---
 
 ## 🧠 Algorithms Used
+### 🔹 Sequential Search (Linear Search)
+
+Used to:
+- Find the **first occurrence** of `53` in the unsorted array.
+- Count all occurrences of `53` by scanning the entire array.
+
+**Time Complexity:**
+- Best case: Θ(1)
+- Worst / Average case: **Θ(n)**
+---
 ### 🔹 Merge Sort
-A **divide and conquer** algorithm that divides an array into halves, recursively sorts each half, and merges them into a sorted list.  
+Used to sort the array after the initial sequential search and counting.
+
+Key idea:
+- **Divide and conquer** – recursively split the array into halves, sort each half, and merge them.
 **Time Complexity:** Θ(n log n)  
 **Space Complexity:** Θ(n)
-
+---
 ### 🔹 Binary Search
-An efficient algorithm that searches for an element in a **sorted array** by repeatedly dividing the search interval in half.  
-**Time Complexity:** Θ(log n)
+After sorting, the program calls `binarySearch(int[] startingArray, int search)`:
+
+1. Uses standard **binary search** to locate any occurrence of the search value (53).
+2. Once found:
+   - Scans left while the value is still 53.
+   - Scans right while the value is still 53.
+   - Counts all occurrences and returns the total number.
+
+**Time Complexity:**  
+- Binary search part: Θ(log n)  
+- Left/right scan: Θ(k), where k is the number of repeats  
+- Overall: **Θ(log n + k)**
+
 
 ---
 
